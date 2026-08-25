@@ -17,12 +17,5 @@ SCREEN_PATH="/backdrop/screen0/monitorVNC-0/workspace0/last-image"
 # Get screen path using 'xfconf-query -c xfce4-desktop -mv' and then change background
 xfconf-query -c xfce4-desktop -p $SCREEN_PATH -s $IMAGE_FILE
 
-# Install Apps
-sudo dnf -y -q install firefox
-
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
-
-sudo dnf -y -q install neovim \
-    bind-utils \
-    iputils
