@@ -4,6 +4,8 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null
 
 export $(dbus-launch)
 
+whoami
+
 echo $DISPLAY
 echo $XAUTHORITY
 echo $DBUS_SESSION_BUS_ADDRESS
