@@ -6,6 +6,8 @@ echo $DISPLAY
 echo $XAUTHORITY
 echo $DBUS_SESSION_BUS_ADDRESS
 
+echo $(dbus-launch)
+
 # Set Theme
 THEME="Greybird-dark"
 xfconf-query -c xsettings -p /Net/ThemeName -s $THEME
