@@ -17,19 +17,11 @@ SCREEN_PATH="/backdrop/screen0/monitorVNC-0/workspace0/last-image"
 # Get screen path using 'xfconf-query -c xfce4-desktop -mv' and then change background
 xfconf-query -c xfce4-desktop -p $SCREEN_PATH -s $IMAGE_FILE
 
-# Download Bitwarden
-BITWARDEN_URL="https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm"
-BITWARDEN_PATH="~/bitwarden.rpm"
-curl -L -o $BITWARDEN_PATH $BITWARDEN_URL
-sudo dnf install -y $BITWARDEN_PATH
-rm $BITWARDEN_PATH
-
 # Install Apps
 sudo dnf install -y firefox \
     neovim \
     bind-utils \
-    iputils \
-    $BITWARDEN_PATH
+    iputils
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
