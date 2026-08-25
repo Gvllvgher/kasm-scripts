@@ -2,6 +2,7 @@
 # Defines the current script directory
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
 
+DISPLAY=:1.0
 echo $DISPLAY
 
 # Set Theme
