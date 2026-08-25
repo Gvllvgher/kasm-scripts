@@ -2,8 +2,6 @@
 # Defines the current script directory
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
 
-export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"
-
 echo $DISPLAY
 echo $XAUTHORITY
 echo $DBUS_SESSION_BUS_ADDRESS
