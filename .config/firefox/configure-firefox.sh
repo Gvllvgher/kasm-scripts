@@ -12,4 +12,5 @@ else
 fi
 
 # Requires policies.json to be in the same folder as this script
-sudo ln -sf $SCRIPT_DIR/policies.json /usr/lib/firefox/distribution/policies.json
+sudo mkdir -p /etc/firefox/policies/
+sudo ln -sf $SCRIPT_DIR/policies.json /etc/firefox/policies/policies.json
