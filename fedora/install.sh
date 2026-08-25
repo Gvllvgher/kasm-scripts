@@ -38,7 +38,7 @@ for file in ${linkFiles[@]}; do
     fi
     
     # Link the file
-    ln -sf $SCRIPT_DIR/$file ~/$file
+    ln -sf $SCRIPT_DIR/../$file ~/$file
 done
 
 # Loop through the linkDirs list
@@ -47,7 +47,7 @@ for dir in ${linkDirs[@]}; do
     rm -rf ~/$dir
 
     # Link the directory
-    ln -sfT $SCRIPT_DIR/$dir ~/$dir
+    ln -sfT $SCRIPT_DIR/../$dir ~/$dir
 done
 
 # Run configuration script(s)
