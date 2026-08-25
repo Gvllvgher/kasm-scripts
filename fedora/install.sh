@@ -3,7 +3,7 @@
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
 
 # Defines parent of current script directory
-$PARENT_SCRIPT_DIR="${SCRIPT_DIR%/*}"
+PARENT_SCRIPT_DIR="${SCRIPT_DIR%/*}"
 
 # Set Wallpaper
 IMAGE_FILE="/usr/share/backgrounds/bg_kasm.png"
