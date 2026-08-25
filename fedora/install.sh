@@ -2,15 +2,6 @@
 # Defines the current script directory
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
 
-# Set Theme
-THEME="Greybird-dark"
-xfconf-query -c xsettings -p /Net/ThemeName -s $THEME
-xfconf-query -c xfwm4 -p /general/theme -s $THEME
-gsettings set org.gnome.desktop.interface gtk-theme $THEME
-
-# Set Dark Mode
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
 # Set Wallpaper
 IMAGE_FILE="/usr/share/backgrounds/bg_kasm.png"
 SCREEN_PATH="/backdrop/screen0/monitorVNC-0/workspace0/last-image"
@@ -24,11 +15,40 @@ sudo dnf -y -q install firefox \
     iputils \
     flatpak
 
-# Configure Flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org
+# Define any files that need to be linked
+linkFiles=( \
+    ".config/gtk-3.0/settings.ini"
+)
 
-# Install Flatpak Apps
-flatpak install flathub com.bitwarden.desktop
+# Define any directories that need to be linked
+linkDirs=( \
+    ".config/xfce4"
+)
+
+# Loop through the linkFiles list
+for file in ${linkFiles[@]}; do
+    # Delete the file if it exists
+    rm ~/$file &> /dev/null
+    
+    # Check if the $file variable contains '/' to
+    # determine if it goes into a subdirectory of ~
+    if [[ "$file" == *"/"* ]]; then
+        # Create the subdirectory if it doesn't exist
+        mkdir -p ~/${file%/*}
+    fi
+    
+    # Link the file
+    ln -sf $SCRIPT_DIR/$file ~/$file
+done
+
+# Loop through the linkDirs list
+for dir in ${linkDirs[@]}; do
+    # Delete the directory if it exists
+    rm -rf ~/$dir
+
+    # Link the directory
+    ln -sfT $SCRIPT_DIR/$dir ~/$dir
+done
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
