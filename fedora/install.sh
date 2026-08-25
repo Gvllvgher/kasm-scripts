@@ -2,10 +2,6 @@
 # Defines the current script directory
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
 
-echo $DISPLAY
-echo $XAUTHORITY
-echo $DBUS_SESSION_BUS_ADDRESS
-
 # Set Theme
 THEME="Greybird-dark"
 xfconf-query -c xsettings -p /Net/ThemeName -s $THEME
