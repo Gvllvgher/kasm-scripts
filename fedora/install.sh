@@ -11,13 +11,6 @@ SCREEN_PATH="/backdrop/screen0/monitorVNC-0/workspace0/last-image"
 # Get screen path using 'xfconf-query -c xfce4-desktop -mv' and then change background
 xfconf-query -c xfce4-desktop -p $SCREEN_PATH -s $IMAGE_FILE
 
-# Install Apps
-sudo dnf -y -q install firefox \
-    neovim \
-    bind-utils \
-    iputils \
-    flatpak
-
 # Define any files that need to be linked
 linkFiles=( \
     ".config/gtk-3.0/settings.ini"
@@ -52,6 +45,13 @@ for dir in ${linkDirs[@]}; do
     # Link the directory
     ln -sfT $PARENT_SCRIPT_DIR/$dir ~/$dir
 done
+
+# Install Apps
+sudo dnf -y -q install firefox \
+    neovim \
+    bind-utils \
+    iputils \
+    flatpak
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
