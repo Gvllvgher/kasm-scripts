@@ -2,6 +2,9 @@
 # Defines the current script directory
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
 
+# Defines parent of current script directory
+$PARENT_SCRIPT_DIR="${SCRIPT_DIR%/*}"
+
 # Set Wallpaper
 IMAGE_FILE="/usr/share/backgrounds/bg_kasm.png"
 SCREEN_PATH="/backdrop/screen0/monitorVNC-0/workspace0/last-image"
@@ -38,7 +41,7 @@ for file in ${linkFiles[@]}; do
     fi
     
     # Link the file
-    ln -sf $SCRIPT_DIR/../$file ~/$file
+    ln -sf $PARENT_SCRIPT_DIR/$file ~/$file
 done
 
 # Loop through the linkDirs list
@@ -47,7 +50,7 @@ for dir in ${linkDirs[@]}; do
     rm -rf ~/$dir
 
     # Link the directory
-    ln -sfT $SCRIPT_DIR/../$dir ~/$dir
+    ln -sfT $PARENT_SCRIPT_DIR/$dir ~/$dir
 done
 
 # Run configuration script(s)
