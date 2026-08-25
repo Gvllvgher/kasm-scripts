@@ -25,7 +25,7 @@ xfconf-query -c xfce4-desktop -p $SCREEN_PATH -s $IMAGE_FILE
 sudo dnf -y -q install firefox \
     neovim \
     bind-utils \
-    iputils \
+    iputils
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
