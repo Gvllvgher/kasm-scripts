@@ -21,7 +21,14 @@ xfconf-query -c xfce4-desktop -p $SCREEN_PATH -s $IMAGE_FILE
 sudo dnf -y -q install firefox \
     neovim \
     bind-utils \
-    iputils
+    iputils \
+    flatpak
+
+# Configure Flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org
+
+# Install Flatpak Apps
+flatpak install flathub com.bitwarden.desktop
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
