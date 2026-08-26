@@ -1,6 +1,7 @@
 #!/bin/bash
 # Defines the current script directory
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}";     )" &> /dev/null && pwd 2> /dev/null;     )";
+SCRIPT_PARENT_DIR="${SCRIPT_DIR%/*}"
 
 # Set Theme
 THEME="Greybird-dark"
@@ -22,3 +23,11 @@ sudo chsh kasm-user -s /usr/bin/zsh
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
+
+# Zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/catppuccin/zsh-syntax-highlighting ~/.zsh/catppuccin-zsh-syntax-highlighting
+
+# Link ZSH config
+ln -sf $SCRIPT_PARENT_DIR/.zshrc ~/.zshrc
