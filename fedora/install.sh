@@ -28,5 +28,6 @@ $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 
-# Link ZSH config
+# Link configs
 ln -sf $SCRIPT_PARENT_DIR/.zshrc ~/.zshrc
+ln -sf $SCRIPT_PARENT_DIR/.config/starship.toml ~/.config/starship.toml
