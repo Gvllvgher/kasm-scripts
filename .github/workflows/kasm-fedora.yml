@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - '**Dockerfile'
+      - 'fedora/**Dockerfile'
 
 jobs:
   build:
