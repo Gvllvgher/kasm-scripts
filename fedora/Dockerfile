@@ -34,8 +34,6 @@ RUN dnf install -y vlc \
 	bind-utils \
 	code
 
-# Install VSCode
-
 # Install starship prompt
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
