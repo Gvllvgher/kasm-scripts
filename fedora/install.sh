@@ -43,3 +43,5 @@ then
     fi
 fi
 EOF
+
+timeout 60 nvim
