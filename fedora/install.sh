@@ -27,7 +27,6 @@ $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
 # Zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
-git clone https://github.com/catppuccin/zsh-syntax-highlighting ~/.zsh/catppuccin-zsh-syntax-highlighting
 
 # Link ZSH config
 ln -sf $SCRIPT_PARENT_DIR/.zshrc ~/.zshrc
