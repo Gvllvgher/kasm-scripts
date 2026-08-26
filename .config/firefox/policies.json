@@ -2,10 +2,25 @@
   "policies": {
     "OfferToSaveLogins": false,
     "OfficeToSaveLoginsDefault": false,
+    "AutofillCreditCardEnabled": false,
+    "AutofillAddressEnabled": false,
     "DisablePocket": true,
     "DisableTelemetry": true,
+    "DisableFirefoxAccounts": true,
     "OverrideFirstRunPage": "https://google.com",
     "OverridePostUpdatePage": "https://google.com",
+    "PasswordManagerEnabled": false,
+    "SkipTermsOfUse": true,
+    "AIControls": {
+      "Default": {
+        "Value": "blocked",
+        "Locked": false
+      }
+    },
+    "GenerativeAI": {
+      "Enabled": false,
+      "Locked": false
+    },
     "ExtensionSettings": {
       "uBlock0@raymondhill.net": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
