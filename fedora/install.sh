@@ -19,7 +19,7 @@ SCREEN_PATH="/backdrop/screen0/monitorVNC-0/workspace0/last-image"
 xfconf-query -c xfce4-desktop -p $SCREEN_PATH -s $IMAGE_FILE
 
 # Set shell
-sudo chsh kasm-user -s /usr/bin/zsh
+sudo chsh kasm-user -s /usr/sbin/zsh
 
 # Run configuration script(s)
 $SCRIPT_DIR/../.config/firefox/configure-firefox.sh
