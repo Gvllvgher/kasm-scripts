@@ -1,0 +1,37 @@
+{
+  "cSpell.ignoreWords": [
+    "asyncio",
+    "asyncpg",
+    "qtile",
+    "libqtile",
+    "rofi",
+    "distro",
+    "alacritty",
+    "catppuccin",
+    "drun",
+    "unsplit",
+    "amixer",
+    "nmtui",
+    "dgroups",
+    "wmname",
+    "wttr",
+    "Willoughby",
+    "gmrs"
+  ],
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+    "initializationOptions": {},
+    "settings": {}
+    }
+  },
+  "powershell.integratedConsole.showOnStartup": false  
+}
