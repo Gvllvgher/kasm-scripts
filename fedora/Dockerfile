@@ -27,8 +27,8 @@ RUN dnf check-update
 RUN dnf install -y vlc \
 	zsh \
 	tmux \
-	xz \dnf check-update
-	firefox \dnf check-update
+	xz \
+	firefox \
 	neovim \
 	iputils \
 	bind-utils \
