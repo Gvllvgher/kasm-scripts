@@ -16,7 +16,7 @@ ENV SKIP_CLEAN=true \
     KASM_RX_HOME=$STARTUPDIR/kasmrx \
     DONT_PROMPT_WSL_INSTALL="No_Prompt_please"
 
-# Install applications with dnf
+# Install applications
 RUN dnf install -y vlc \
 	zsh \
 	tmux \
