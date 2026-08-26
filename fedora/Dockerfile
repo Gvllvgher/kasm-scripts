@@ -16,13 +16,6 @@ ENV SKIP_CLEAN=true \
     KASM_RX_HOME=$STARTUPDIR/kasmrx \
     DONT_PROMPT_WSL_INSTALL="No_Prompt_please"
 
-# Add VSCode Repo for dnf
-RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc
-RUN echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
-
-# Check update before app installations, exit 0 necessary to allow build
-RUN dnf check-update; exit 0
-
 # Install applications
 RUN dnf install -y vlc \
 	zsh \
@@ -31,8 +24,7 @@ RUN dnf install -y vlc \
 	firefox \
 	neovim \
 	iputils \
-	bind-utils \
-	code
+	bind-utils
 
 # Install starship prompt
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
