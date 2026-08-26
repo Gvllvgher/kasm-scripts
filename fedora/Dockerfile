@@ -23,11 +23,7 @@ RUN dnf install -y vlc \
 	firefox \
 	neovim \
 	iputils \
-	bind-utils \
-	flatpak
-
-RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-RUN flatpak install flathub com.bitwarden.desktop -y
+	bind-utils
 
 # Install starship prompt
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
