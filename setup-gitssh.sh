@@ -1,7 +1,10 @@
 #! /bin/bash
 
 if [ ! -f ~/.ssh/id_rsa ]; then
-  read -p "Enter github email: " email
+  email=$(git config user.email)
+  if [ ! $email ]; then
+    read -p "Enter github email: " email
+  fi
   ssh-keygen -t ed25519 -C "$email" -f ~/.ssh/id_rsa
   ssh-add ~/.ssh/id_rsa
 fi
