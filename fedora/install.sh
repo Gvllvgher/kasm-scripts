@@ -28,3 +28,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax
 # Link configs
 ln -sf $SCRIPT_PARENT_DIR/.zshrc ~/.zshrc
 ln -sf $SCRIPT_PARENT_DIR/.config/starship.toml ~/.config/starship.toml
+ln -sfT $SCRIPT_PARENT_DIR/.config/nvim ~/.config/nvim
