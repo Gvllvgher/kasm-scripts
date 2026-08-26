@@ -20,7 +20,7 @@ ENV SKIP_CLEAN=true \
 RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc
 RUN echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 
-# Check update before app installations
+# Check update before app installations, exit 0 necessary to allow build
 RUN dnf check-update; exit 0
 
 # Install applications
