@@ -25,6 +25,7 @@ RUN dnf check-update; exit 0
 
 # Install applications
 RUN dnf install -y vlc \
+	dpkg \
 	zsh \
 	tmux \
 	xz \
