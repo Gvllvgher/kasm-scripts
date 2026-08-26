@@ -16,7 +16,7 @@ ENV SKIP_CLEAN=true \
     KASM_RX_HOME=$STARTUPDIR/kasmrx \
     DONT_PROMPT_WSL_INSTALL="No_Prompt_please"
 
-# Add VSCode Repo for dnf
+# Add VSCode Repo
 RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc
 RUN echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 
