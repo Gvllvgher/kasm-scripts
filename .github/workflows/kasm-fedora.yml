@@ -29,7 +29,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          context: ./fedora/
+          context: ./fedora/docker
           tags: ghcr.io/gvllvgher/kasm-fedora:latest
           push: true
 
