@@ -29,3 +29,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax
 ln -sf $SCRIPT_PARENT_DIR/.zshrc ~/.zshrc
 ln -sf $SCRIPT_PARENT_DIR/.config/starship.toml ~/.config/starship.toml
 ln -sfT $SCRIPT_PARENT_DIR/.config/nvim ~/.config/nvim
+
+# Set Shell
+cat <<EOF >> ~/.bzshrc
+if [ -z "${NOZSH}" ] && [ $TERM = "xterm" -o $TERM = "xterm-256color" -o $TERM = "screen" ] && type zsh &> /dev/null
+then
+    export SHELL=$(which zsh)
+    if [[ -o login ]]
+    then
+        exec zsh -l
+    else
+        exec zsh
+    fi
+fi
+EOF
