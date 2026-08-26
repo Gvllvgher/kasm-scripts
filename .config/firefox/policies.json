@@ -11,6 +11,18 @@
     "OverridePostUpdatePage": "https://google.com",
     "PasswordManagerEnabled": false,
     "SkipTermsOfUse": true,
+    "FirefoxHome": {
+      "Search": true,
+      "TopSites": false,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "Stories": false,
+      "SponsoredPocket": false,
+      "SponsoredStories": false,
+      "Snippets": false,
+      "Locked": false
+    },
     "AIControls": {
       "Default": {
         "Value": "blocked",
