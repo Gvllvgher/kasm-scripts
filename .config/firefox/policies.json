@@ -1,7 +1,6 @@
 {
   "policies": {
-    "OfferToSaveLogins": false,
-    "OfficeToSaveLoginsDefault": false,
+    "OfferToSaveLoginsDefault": false,
     "AutofillCreditCardEnabled": false,
     "AutofillAddressEnabled": false,
     "DisablePocket": true,
@@ -9,7 +8,6 @@
     "DisableFirefoxAccounts": true,
     "OverrideFirstRunPage": "https://google.com",
     "OverridePostUpdatePage": "https://google.com",
-    "PasswordManagerEnabled": false,
     "SkipTermsOfUse": true,
     "FirefoxHome": {
       "Search": true,
